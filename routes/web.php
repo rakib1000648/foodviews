@@ -7,6 +7,7 @@ Route::get('/', function () {
 });
 
 
+
 // System Admin routes ----------------------------------------------------------------------------
 
 
@@ -29,9 +30,11 @@ Route::group(['prefix'=>'systemadmin'], function(){
 Route::get('/companyregister','Auth\CompanyRegister@show');
 Route::post('/companyregister','Auth\CompanyRegister@save');
 Route::get('/companyverify','Auth\CompanyRegister@coverify');
+Route::get('/companyadmin/register/{domain}','Auth\CoAdminRegController@show');
 
 
 
+Route::post('/company/admin/registration','Auth\CoAdminRegController@save');
 Route::get('/company/admin','Company\CompanyAdmin\HomeController@index');
 Route::get('/company/admin/statistics','Company\CompanyAdmin\HomeController@index');
 

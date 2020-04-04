@@ -25,7 +25,7 @@ class ChecRole
       if($request->user()->hasAnyRole($roles) || !$roles){
           return $next($request);
       }
-      //return response('Insufficent permission',401);
+      
       return response()->view('errors.403');
     }
 }

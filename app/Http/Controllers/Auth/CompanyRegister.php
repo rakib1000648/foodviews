@@ -21,7 +21,7 @@ class CompanyRegister extends Controller
 
   public function save(request $req)
   {
-    //print_r($req->input());
+
 
     $req->validate([
            'name' => 'required',
